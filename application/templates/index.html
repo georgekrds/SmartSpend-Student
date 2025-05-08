@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Επιλογή Πόλης & Κατηγοριών</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 400px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select, .checkbox-group {
+      margin-top: 8px;
+    }
+    .checkbox-group label {
+      font-weight: normal;
+      display: block;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <label for="city">Επιλέξτε Πόλη:</label>
+    <select id="city" name="city">
+      <option value="athens">Αθήνα</option>
+      <option value="thessaloniki">Θεσσαλονίκη</option>
+      <option value="patras">Πάτρα</option>
+      <option value="heraklion">Ηράκλειο</option>
+      <option value="corfu">Κέρκυρα</option>
+    </select>
+
+    <label>Κατηγορίες Δαπανών:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="category" value="food"> Φαγητό</label>
+      <label><input type="checkbox" name="category" value="transport"> Μεταφορές</label>
+      <label><input type="checkbox" name="category" value="housing"> Στέγαση</label>
+      <label><input type="checkbox" name="category" value="entertainment"> Ψυχαγωγία</label>
+      <label><input type="checkbox" name="category" value="education"> Εκπαίδευση</label>
+    </div>
+  </div>
+</body>
+</html>
