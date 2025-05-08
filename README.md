@@ -87,3 +87,5 @@ python app.py
 ## 📄 Άδεια Χρήσης
 
 Αυτή η εφαρμογή είναι ανοιχτού κώδικα υπό την άδεια [MIT License](https://opensource.org/licenses/MIT).
+
+---
