@@ -2,54 +2,142 @@
 <html lang="el">
 <head>
   <meta charset="UTF-8">
-  <title>Επιλογή Πόλης & Κατηγοριών</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Υπολογισμός Μηνιαίου Κόστους</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
+
     .container {
-      max-width: 400px;
-      padding: 20px;
-      background: #fff;
+      background-color: #fff;
+      padding: 40px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
     }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
     label {
       display: block;
       margin-top: 15px;
       font-weight: bold;
+      color: #333;
     }
+
     select, .checkbox-group {
-      margin-top: 8px;
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
     }
+
     .checkbox-group label {
-      font-weight: normal;
-      display: block;
-      margin-top: 5px;
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <label for="city">Επιλέξτε Πόλη:</label>
-    <select id="city" name="city">
-      <option value="athens">Αθήνα</option>
-      <option value="thessaloniki">Θεσσαλονίκη</option>
-      <option value="patras">Πάτρα</option>
-      <option value="heraklion">Ηράκλειο</option>
-      <option value="corfu">Κέρκυρα</option>
-    </select>
+    <h1>Υπολογισμός Κόστους</h1>
+    <form id="cost-form">
+      <label for="city">Επιλέξτε Πόλη:</label>
+      <select id="city" name="city" required>
+        <option value="alexandroupoli">Αλεξανδρούπολη</option>
+        <option value="athens">Αθήνα</option>
+        <option value="chania">Χανιά</option>
+        <option value="corfu">Κέρκυρα</option>
+        <option value="heraklion">Ηράκλειο</option>
+        <option value="ioannina">Ιωάννινα</option>
+        <option value="kalamata">Καλαμάτα</option>
+        <option value="komotini">Κομοτηνή</option>
+        <option value="larissa">Λάρισα</option>
+        <option value="mytilini">Μυτιλήνη</option>
+        <option value="patras">Πάτρα</option>
+        <option value="piraeus">Πειραιάς</option>
+        <option value="rhodes">Ρόδος</option>
+        <option value="thessaloniki">Θεσσαλονίκη</option>
+        <option value="volos">Βόλος</option>
+        <option value="xanthi">Ξάνθη</option>
+      </select>
 
-    <label>Κατηγορίες Δαπανών:</label>
-    <div class="checkbox-group">
-      <label><input type="checkbox" name="category" value="food"> Φαγητό</label>
-      <label><input type="checkbox" name="category" value="transport"> Μεταφορές</label>
-      <label><input type="checkbox" name="category" value="housing"> Στέγαση</label>
-      <label><input type="checkbox" name="category" value="entertainment"> Ψυχαγωγία</label>
-      <label><input type="checkbox" name="category" value="education"> Εκπαίδευση</label>
+      <label>Επιλέξτε Κατηγορίες Δαπανών:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="categories" value="food"> Φαγητό</label>
+        <label><input type="checkbox" name="categories" value="transportation"> Μεταφορές</label>
+        <label><input type="checkbox" name="categories" value="entertainment"> Ψυχαγωγία</label>
+        <label><input type="checkbox" name="categories" value="supermarket"> Σούπερ Μάρκετ</label>
+        <label><input type="checkbox" name="categories" value="bills"> Λογαριασμοί</label>
+        <label><input type="checkbox" name="categories" value="student_restaurant"> Εστιατόριο Φοιτητών</label>
+      </div>
+
+      <button type="submit">Υπολογισμός Κόστους</button>
+    </form>
+
+    <div id="result" style="display:none;">
+      <h3>Σύνολο Μηνιαίου Κόστους: <span id="total-cost"></span> €</h3>
+      <h3>Γράφημα Κόστους:</h3>
+      <img id="cost-chart" src="" alt="Γράφημα Κόστους" style="max-width: 100%; margin-top: 20px;">
     </div>
   </div>
+
+  <script>
+    const form = document.getElementById('cost-form');
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const city = document.getElementById('city').value;
+      const categories = Array.from(document.querySelectorAll('input[name="categories"]:checked')).map(checkbox => checkbox.value);
+
+      const response = await fetch('/calculate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ city, categories }),
+      });
+
+      const data = await response.json();
+
+      if (data.error) {
+        alert('Σφάλμα: ' + data.error);
+      } else {
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('total-cost').textContent = data.total_cost;
+        document.getElementById('cost-chart').src = 'data:image/png;base64,' + data.chart;
+      }
+    });
+  </script>
 </body>
 </html>
