@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import requests
 import plotly.express as px
-from pathlib import Path
-import json
 
 # Προσαρμογή ρυθμίσεων σελίδας
 st.set_page_config(
@@ -23,9 +21,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Φόρτωση δεδομένων JSON
-file_path = Path("streamlit_app/costs.json")
-with open(file_path, "r", encoding="utf-8") as f:
-    data = json.load(f)
+url = "https://raw.githubusercontent.com/georgekrds/SmartSpend-Student/main/streamlit_app/costs.json"
+data = requests.get(url).json()
 
 cities = [item["LOCATION"] for item in data]
 selected_city = st.selectbox("📍 Επιλογή πόλης", cities)
@@ -58,7 +55,8 @@ for cat in default_categories:
 days_out = 0
 if "FOOD" in selected_categories:
     st.markdown("##### 🍴 Πόσες μέρες την εβδομάδα τρως έξω;")
-    days_out = st.slider("", min_value=0, max_value=7, value=2)
+    days_out = st.slider("Slider φαγητού", min_value=0, max_value=7, value=2, label_visibility="collapsed")
+
 
 # Ανάκτηση δεδομένων για την επιλεγμένη πόλη
 city_data = next((item for item in data if item["LOCATION"] == selected_city), None)
