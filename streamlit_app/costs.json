@@ -1,0 +1,146 @@
+[
+  {
+    "LOCATION": "Αλεξανδρούπολη",
+    "FOOD": 10,
+    "TRANSPORTATION": 28,
+    "ENTERTAINMENT": 55,
+    "SUPERMARKET": 150,
+    "BILLS": 90,
+    "STUDENT_RESTAURANT": 66
+  },
+  {
+    "LOCATION": "Αθήνα",
+    "FOOD": 15,
+    "TRANSPORTATION": 13,
+    "ENTERTAINMENT": 54,
+    "SUPERMARKET": 170,
+    "BILLS": 172,
+    "STUDENT_RESTAURANT": 68
+  },
+  {
+    "LOCATION": "Χανιά",
+    "FOOD": 12,
+    "TRANSPORTATION": 30,
+    "ENTERTAINMENT": 70,
+    "SUPERMARKET": 170,
+    "BILLS": 150,
+    "STUDENT_RESTAURANT": 45
+  },
+  {
+    "LOCATION": "Κέρκυρα",
+    "FOOD": 10,
+    "TRANSPORTATION": 30,
+    "ENTERTAINMENT": 55,
+    "SUPERMARKET": 137,
+    "BILLS": 150,
+    "STUDENT_RESTAURANT": 72
+  },
+  {
+    "LOCATION": "Ηράκλειο",
+    "FOOD": 12,
+    "TRANSPORTATION": 45,
+    "ENTERTAINMENT": 51,
+    "SUPERMARKET": 165,
+    "BILLS": 98,
+    "STUDENT_RESTAURANT": 45
+  },
+  {
+    "LOCATION": "Ιωάννινα",
+    "FOOD": 10,
+    "TRANSPORTATION": 20,
+    "ENTERTAINMENT": 52,
+    "SUPERMARKET": 150,
+    "BILLS": 87,
+    "STUDENT_RESTAURANT": 70
+  },
+  {
+    "LOCATION": "Καλαμάτα",
+    "FOOD": 13,
+    "TRANSPORTATION": 28,
+    "ENTERTAINMENT": 55,
+    "SUPERMARKET": 135,
+    "BILLS": 90,
+    "STUDENT_RESTAURANT": 66
+  },
+  {
+    "LOCATION": "Κομοτηνή",
+    "FOOD": 9,
+    "TRANSPORTATION": 36,
+    "ENTERTAINMENT": 55,
+    "SUPERMARKET": 143,
+    "BILLS": 200,
+    "STUDENT_RESTAURANT": 66
+  },
+  {
+    "LOCATION": "Λάρισα",
+    "FOOD": 10,
+    "TRANSPORTATION": 30,
+    "ENTERTAINMENT": 57,
+    "SUPERMARKET": 152,
+    "BILLS": 80,
+    "STUDENT_RESTAURANT": 70
+  },
+  {
+    "LOCATION": "Μυτιλήνη",
+    "FOOD": 11,
+    "TRANSPORTATION": 30,
+    "ENTERTAINMENT": 20,
+    "SUPERMARKET": 165,
+    "BILLS": 220,
+    "STUDENT_RESTAURANT": 66
+  },
+  {
+    "LOCATION": "Πάτρα",
+    "FOOD": 10,
+    "TRANSPORTATION": 27,
+    "ENTERTAINMENT": 44,
+    "SUPERMARKET": 160,
+    "BILLS": 187,
+    "STUDENT_RESTAURANT": 70
+  },
+  {
+    "LOCATION": "Πειραιάς",
+    "FOOD": 10,
+    "TRANSPORTATION": 13,
+    "ENTERTAINMENT": 46,
+    "SUPERMARKET": 160,
+    "BILLS": 172,
+    "STUDENT_RESTAURANT": 68
+  },
+  {
+    "LOCATION": "Ρόδος",
+    "FOOD": 10,
+    "TRANSPORTATION": 25,
+    "ENTERTAINMENT": 55,
+    "SUPERMARKET": 134,
+    "BILLS": 175,
+    "STUDENT_RESTAURANT": 52
+  },
+  {
+    "LOCATION": "Θεσσαλονίκη",
+    "FOOD": 15,
+    "TRANSPORTATION": 8,
+    "ENTERTAINMENT": 50,
+    "SUPERMARKET": 158,
+    "BILLS": 184,
+    "STUDENT_RESTAURANT": 68
+  },
+  {
+    "LOCATION": "Βόλος",
+    "FOOD": 12,
+    "TRANSPORTATION": 30,
+    "ENTERTAINMENT": 48,
+    "SUPERMARKET": 157,
+    "BILLS": 93,
+    "STUDENT_RESTAURANT": 70
+  },
+  {
+    "LOCATION": "Ξάνθη",
+    "FOOD": 12,
+    "TRANSPORTATION": 23,
+    "ENTERTAINMENT": 50,
+    "SUPERMARKET": 140,
+    "BILLS": 90,
+    "STUDENT_RESTAURANT": 66
+  }
+]
