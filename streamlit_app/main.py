@@ -3,6 +3,7 @@ import pandas as pd
 import requests
 import plotly.express as px
 from pathlib import Path
+import json
 
 # Προσαρμογή ρυθμίσεων σελίδας
 st.set_page_config(
