@@ -21,8 +21,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Φόρτωση δεδομένων JSON
-url = "https://raw.githubusercontent.com/georgekrds/SmartSpend-Student/main/streamlit_app/costs.json"
-data = requests.get(url).json()
+file_path = Path("costs.json")
+with open(file_path, "r", encoding="utf-8") as f:
+    data = json.load(f)
 
 cities = [item["LOCATION"] for item in data]
 selected_city = st.selectbox("📍 Επιλογή πόλης", cities)
