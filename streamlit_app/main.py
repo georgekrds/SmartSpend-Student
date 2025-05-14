@@ -143,7 +143,7 @@ st.markdown("""
         Καρύδης Γεώργιος - Εδουάρδος (inf2024072)<br>
         Λειβαδιώτης Νικόλαος (inf2024101)<br>
         Τζώρτζης Κωνσταντίνος (inf2024168)<br><br>
-        <a href='https://github.com/georgekrds/SmartSpend-Student/tree/main' target='_blank'>🔗 GitHub Project Link</a>
+        <a href='https://github.com/georgekrds/SmartSpend-Student/tree/main' target='_blank'>🔗 GitHub</a>
     </p>
 </div>
 """, unsafe_allow_html=True)
