@@ -22,7 +22,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Φόρτωση δεδομένων JSON
-file_path = Path("costs.json")
+file_path = Path("streamlit_app/costs.json")
 with open(file_path, "r", encoding="utf-8") as f:
     data = json.load(f)
 
