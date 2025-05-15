@@ -57,7 +57,7 @@ streamlit run main.py
 ## 🔧 Απαιτήσεις
 
 - Python 3.8 ή νεότερη
-- pip
+- Pip
 
 ---
 
