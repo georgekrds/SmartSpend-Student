@@ -93,6 +93,7 @@ else:
     st.warning("⚠️ Ο προϋπολογισμός σου είναι χαμηλότερος από το μέσο κόστος.")
 
 # Διάγραμμα
+st.markdown("### 📊 Προτεινόμενη Κατανομή Προϋπολογισμού:")
 remaining = budget - sum(adjusted_cost_items.values())
 categories = [category_labels[c] for c in adjusted_cost_items.keys()]
 costs = list(adjusted_cost_items.values())
