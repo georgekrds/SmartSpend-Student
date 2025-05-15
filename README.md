@@ -58,6 +58,7 @@ streamlit run main.py
 
 - Python 3.8 ή νεότερη
 - Pip
+- Git
 
 ---
 
