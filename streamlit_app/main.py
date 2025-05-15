@@ -72,7 +72,7 @@ for cat in selected_categories:
 
 total_cost = sum(cost_items.values())
 
-# Κανονικοποίηση κόστους αν ξεπερνά τον προϋπολογισμό
+# Αναλογική προσαρμογή κόστους στον προϋπολογισμό
 adjusted_cost_items = {}
 if budget < total_cost:
     ratio = budget / total_cost
