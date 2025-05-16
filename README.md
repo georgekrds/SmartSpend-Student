@@ -44,8 +44,8 @@ pip install -r requirements.txt
 streamlit run main.py
 ```
 
-Ανοίγει αυτόματα στον προεπιλεγμένο browser στη διεύθυνση:  
-`http://localhost:8501`
+> Ανοίγει αυτόματα στον προεπιλεγμένο browser στη διεύθυνση:  
+> `http://localhost:8501`
 
 ---
 
