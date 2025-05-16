@@ -22,10 +22,17 @@ st.markdown("""
 
 # Φόρτωση δεδομένων JSON
 url = "https://raw.githubusercontent.com/georgekrds/SmartSpend-Student/main/streamlit_app/costs.json"
-data = requests.get(url).json()
-
+try:
+    response = requests.get(url)
+    data = response.json()
+except Exception:
+    st.error(" 🌵🦖 Δεν υπάρχει σύνδεση στο διαδίκτυο.")
+    st.stop()
+    
 cities = [item["LOCATION"] for item in data]
 selected_city = st.selectbox("📍 Επιλογή πόλης", cities)
+city_data = next((item for item in data if item["LOCATION"] == selected_city), None)
+
 
 budget = st.number_input("💰 Μηνιαίος προϋπολογισμός (€)", min_value=0, value=300, step=20)
 
@@ -42,7 +49,6 @@ category_labels = {
 }
 
 selected_categories = []
-city_data = next((item for item in data if item["LOCATION"] == selected_city), None)
 for cat in default_categories:
     if cat == "FOOD":
         label = f"{category_labels[cat]} ({city_data[cat]}€/μέρα)"
@@ -57,10 +63,6 @@ if "FOOD" in selected_categories:
     st.markdown("##### 🍴 Πόσες μέρες την εβδομάδα τρως έξω;")
     days_out = st.slider("Slider φαγητού", min_value=0, max_value=7, value=2, label_visibility="collapsed")
 
-
-# Ανάκτηση δεδομένων για την επιλεγμένη πόλη
-city_data = next((item for item in data if item["LOCATION"] == selected_city), None)
-
 # Υπολογισμός κόστους
 cost_items = {}
 for cat in selected_categories:
@@ -71,8 +73,12 @@ for cat in selected_categories:
     cost_items[cat] = cost
 
 total_cost = sum(cost_items.values())
+if total_cost == 0:
+    st.info("ℹ️ Δεν έχεις επιλέξει κάποια κατηγορία εξόδων.")
+    st.stop()
 
-# Αναλογική προσαρμογή κόστους στον προϋπολογισμό
+
+# Κανονικοποίηση κόστους αν ξεπερνά τον προϋπολογισμό
 adjusted_cost_items = {}
 if budget < total_cost:
     ratio = budget / total_cost
