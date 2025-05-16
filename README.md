@@ -7,7 +7,9 @@
 
 Η εφαρμογή SmartSpend Student βοηθά τους φοιτητές να παρακολουθούν και να διαχειρίζονται τον προϋπολογισμό τους, λαμβάνοντας υπόψη το κόστος ζωής ανά πόλη. Παρέχει οπτικοποίηση των εξόδων και έγχρωμη ένδειξη επάρκειας εισοδήματος, καθώς και συμβουλές εξοικονόμησης.
 
-### [🔗 Η εφαρμογή online στο Streamlit](https://smartspend-student.streamlit.app/)
+### [🌐 Η εφαρμογή online στο Streamlit](https://smartspend-student.streamlit.app/)
+### [🎥 YouTube - Παρουσίαση της εφαρμογής](https://www.youtube.com/watch?v=O-op09DcWcc)
+
 
 
 
